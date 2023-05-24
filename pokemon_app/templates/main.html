@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+
+{% block title %}
+    Pokemon Data
+{% endblock %}
+
+{% block content %}
+<form action ="" method = "POST">
+  {{form.hiddentag}}
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+      {{form.pokemon_name}} 
+      </div>
+      <div class="col-auto">
+       {{form.search_btn}}
+      </div>
+    </div>
+  </form>
+  <br>
+  {% if pokemon_data %}
+  <table class="table table-sm table-dark">
+    <thead>
+      <div class ='form-row align-items-center'>
+
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Pokemon Name</th>
+        <th scope="col">Pokemon Ability</th>
+        <th scope="col">Pokemon Base EXP</th>
+        <th scope="col">Hit Points</th>
+        <th scope="col">Attack</th>
+        <th scope="col">Defenses</th>
+        <th scope="'col">Sprite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{pokemon}}</td>
+        <td>{{pokemon_ability}}</td>
+        <td>{{pokemon_base_exp}}</td>
+        <td>{{pokemon_hp}}</td>
+        <td>{{pokemon_attack}}</td>
+        <td>{{pokemon_defense}}</td>
+        <td><img src="{{pokemon_sprites}}" alt="{{pokemon}} sprite"></td>
+      </tr>
+    </tbody>
+  </div>
+  </table>
+  {% endif %}
+  {% endblock %}
+  
