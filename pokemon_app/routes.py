@@ -6,7 +6,7 @@ from pokemon_app import app
 
 @app.route("/")
 def greeting():
-    return "<h1>Welcome to the page!</h1>"
+    return render_template('home.html')
 
 
 @app.route('/home')
