@@ -1,7 +1,16 @@
-from flask import Flask, request, render_template
-import requests
+from flask import Flask
+from config import Config
+from flask_login import LoginManager, current_user
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
 
 app = Flask(__name__)
-from config import Config
 app.config.from_object(Config)
-from app import routes
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+db = SQLAlchemy(app)
+migrate =Migrate(app, db)
+
+from app import routes, models

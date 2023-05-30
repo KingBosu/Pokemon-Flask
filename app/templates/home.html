@@ -35,23 +35,42 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav">
+            {%if current_user.username %}
             <div class="nav-item active">
-              <a class="nav-link" href="/home"
+              <p>{{current_user.username}}</p>
+              <a class="nav-link" href="{{url_for('signout')}}"
+                >Sign Out <span class="sr-only"></span
+              ></a>
+            </div>
+            {%endif%}
+            <div class="nav-item active">
+              <a class="nav-link" href="{{url_for('home')}}"
                 >Home <span class="sr-only"></span
               ></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="/main">Main</a>
+              <a class="nav-link" href="{{url_for('pokemon_selector')}}">Pokemon selector</a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
+              <a class="nav-link" href="{{url_for('login')}}">Log In</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
-     
-      <div class="container">
+    {%with messages = get_flashed_messages(with_categories = true) %} {%if
+    messages %} {%for category, message in messages %}
+    <div class="alert alert-{{category}} alert-dismissable fade show" role>
+      <p>{{message}}</p>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+    <div class="container">
       {% block content %}
       <div>
         <h1>Welcome to Pokemon Card Selector!</h1>

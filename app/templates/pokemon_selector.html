@@ -1,0 +1,46 @@
+{% extends 'home.html' %}
+
+{% block title %}
+    <title>Pokemon Data</title>
+{% endblock %}
+
+{% block content %}
+<h2>Select your Pokemon!</h2>
+<div class="container w25">
+<form action ="" method = "POST">
+  {{form.hiddentag}}
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+      {{form.pokemon_name(class = "form-control")}} 
+      </div>
+      <div class="col-auto">
+       {{form.search_btn(class="btn btn-primary d-block mx-auto")}}
+      </div>
+    </div>
+  </form>
+  </div>
+  <br>
+  {% if pokemon_data %}
+  <table class="table table-sm table-dark">
+    <thead>
+      <div class ='form-row align-items-center'>
+
+      <div class ='pokemondisplay'>
+        <div class="container-inner">
+          <div class="card card-pokemon card-fire">
+              <div class="card-block">
+                  <div class="card-subtitle text-xs-right"> - <strong>HP:{{pokemon_hp}}</strong></div>
+              </div>
+              <img src="{{pokemon_sprites}}" alt="{{pokemon}} sprite" alt="{{pokemon}} image">
+              <div class="card-block">
+                  <h4 class="card-title">{{pokemon_name}}<small>Base EXP-{{pokemon_base_exp}}    Attack- {{pokemon_attack}}    Defense-{{pokemon_defense}}</small></h4>
+                  <p class="card-text"><strong>Pokemon Ability: {{pokemon_ability}}</strong></p>
+              </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </table>
+  {% endif %}
+  {% endblock %}
+  

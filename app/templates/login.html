@@ -21,5 +21,8 @@
         <br>
         <h5><a href ='./signup'>Register for Account</a></h5>
     </form>
+    {% if error %}
+    <p class = text-center text-danger>Invalid Username or Password</p>
+    {% endif %}
     </div>
     {% endblock %}
