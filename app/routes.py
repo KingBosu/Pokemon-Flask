@@ -2,7 +2,7 @@ from app import app , db
 from flask import request, render_template, flash, redirect, url_for
 from flask_login import login_user, logout_user, current_user, login_required
 import requests
-from app.forms import LoginForm, RegisterForm, PokemonSelector
+from app.blueprints.auth.forms import LoginForm, RegisterForm, PokemonSelector
 from app.models import User
 from werkzeug.security import check_password_hash
 

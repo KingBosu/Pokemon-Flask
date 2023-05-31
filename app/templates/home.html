@@ -15,6 +15,10 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png" />
+    <link rel="manifest" href="static/images/site.webmanifest" />
     {% block title %}
     <title>Home</title>
     {% endblock %}
@@ -49,7 +53,9 @@
               ></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="{{url_for('pokemon_selector')}}">Pokemon selector</a>
+              <a class="nav-link" href="{{url_for('pokemon_selector')}}"
+                >Pokemon selector</a
+              >
             </div>
             <div class="nav-item">
               <a class="nav-link" href="{{url_for('login')}}">Log In</a>
