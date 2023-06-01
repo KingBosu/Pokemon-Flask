@@ -7,7 +7,7 @@ class PokemonSelector(FlaskForm):
     search_btn = SubmitField('Search', validators=[DataRequired()])
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
+    identifier= StringField('Username or Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     login_btn = SubmitField('Login')
 

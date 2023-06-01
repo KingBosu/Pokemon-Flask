@@ -42,23 +42,23 @@
             {%if current_user.username %}
             <div class="nav-item active">
               <p>{{current_user.username}}</p>
-              <a class="nav-link" href="{{url_for('signout')}}"
+              <a class="nav-link" href="{{url_for('auth.signout')}}"
                 >Sign Out <span class="sr-only"></span
               ></a>
             </div>
             {%endif%}
             <div class="nav-item active">
-              <a class="nav-link" href="{{url_for('home')}}"
+              <a class="nav-link" href="{{url_for('home.home')}}"
                 >Home <span class="sr-only"></span
               ></a>
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="{{url_for('pokemon_selector')}}"
+              <a class="nav-link" href="{{url_for('pokemon_selector.pokemon_selector')}}"
                 >Pokemon selector</a
               >
             </div>
             <div class="nav-item">
-              <a class="nav-link" href="{{url_for('login')}}">Log In</a>
+              <a class="nav-link" href="{{url_for('auth.login')}}">Log In</a>
             </div>
           </div>
         </div>

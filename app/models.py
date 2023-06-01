@@ -26,3 +26,11 @@ class User(UserMixin,db.Model):
         self.username = user_data['username']
         self.email = user_data['email']
         self.password = self.hash_password(user_data['password'])
+
+class Pokemon_catcher(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    pokemon_captured = db.Column(db.String)
+
+
+    
