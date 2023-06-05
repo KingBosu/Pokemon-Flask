@@ -18,15 +18,17 @@ def create_app():
 
     login_manager.init_app(app)
     db.init_app(app)
-    migrate.init_app(app)
+    migrate.init_app(app,db)
 
     from app.blueprints.home import home
     from app.blueprints.pokemon_selector import pokemon_selector
     from app.blueprints.auth import auth
+    from app.blueprints.show_pokemon_team import show_pokemon_team
 
     app.register_blueprint(home)
     app.register_blueprint(pokemon_selector)
     app.register_blueprint(auth)
+    app.register_blueprint(show_pokemon_team)
 
     return app
     

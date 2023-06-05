@@ -4,6 +4,7 @@ from . import auth
 from app.blueprints.auth.forms import LoginForm, RegisterForm
 from app.models import User
 from werkzeug.security import check_password_hash
+from app import db
 
 
 @auth.route('/login', methods=['GET', 'POST'])
