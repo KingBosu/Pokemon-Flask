@@ -7,12 +7,34 @@
 {% block content %}
 <div class="container">
     <h1>{{ current_user.username }}'s Pokemon Team</h1>
-    <ul style="list-style: none;">
-        {% for pokemon in current_user.team %}
-            <li>{{ pokemon.name }}</li>
-            <img src="{{pokemon_sprites}}" alt="{{pokemon}} sprite" alt="{{pokemon}} image">
-            <br>
-        {% endfor %}
-    </ul>
+    <h2>Pokemon Data</h2>
+    <table class="table mx-auto"> 
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ability</th>
+                <th>Base Experience</th>
+                <th>Sprite</th>
+                <th>Action</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for pokemon in pokemon_data %}
+                <tr>
+                    <td>
+                        <img src="{{ pokemon.sprite }}" alt="{{ pokemon.name }} sprite" alt="{{ pokemon.name }} image">
+                    </td>
+                    <td style="text-align: center">{{ pokemon.name }}</td>
+                    <td style="text-align: center">{{ pokemon.ability }}</td>
+                    <td style="text-align: center">{{ pokemon.base_exp }}</td>
+                    <td style="text-align: center">
+                        <form method="POST" action="{{ url_for('release_pokemon.release_pokemon', pokemon_id=pokemon.id) }}">
+                            <button type="submit" class="btn btn-danger">Release</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

@@ -37,6 +37,9 @@
                   <p class="card-text"><strong>Pokemon Ability: {{pokemon_ability}}</strong></p>
                   <form method="POST" action="{{ url_for('pokemon_catcher.catch_pokemon') }}">
                     <input type="hidden" name="pokemon_name" value="{{ pokemon }}">
+                    <input type="hidden" name="pokemon_ability" value="{{ pokemon_ability }}">
+                    <input type="hidden" name="pokemon_base_exp" value="{{ pokemon_base_exp }}">
+                    <input type="hidden" name="pokemon_sprite" value="{{ pokemon_sprites }}">
                     <button type="submit" class="btn btn-primary d-block mx-auto">Catch Pokemon!</button>
                 </form>
                 

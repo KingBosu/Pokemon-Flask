@@ -32,6 +32,13 @@ def pokemon_selector():
                 'pokemon_base_exp': pokemon_base_exp,
                 'pokemon_sprite': pokemon_sprites
             }
+
+
+             # Pass the API data to the form as hidden fields
+            form.pokemon_ability.data = pokemon_ability
+            form.pokemon_base_exp.data = pokemon_base_exp
+            form.pokemon_sprite.data = pokemon_sprites
+
             return render_template('pokemon_selector.html', pokemon_data=pokemon_data, pokemon=pokemon, pokemon_ability=pokemon_ability, pokemon_base_exp=pokemon_base_exp, pokemon_sprites=pokemon_sprites, pokemon_hp=pokemon_hp, pokemon_defense=pokemon_defense, pokemon_attack=pokemon_attack, form=form )
         else:
             flash('Invalid Pokemon')
