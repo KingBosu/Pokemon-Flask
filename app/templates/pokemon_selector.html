@@ -35,12 +35,11 @@
               <div class="card-block">
                   <h4 class="card-title">{{pokemon_name}}<small>Base EXP-{{pokemon_base_exp}}    Attack- {{pokemon_attack}}    Defense-{{pokemon_defense}}</small></h4>
                   <p class="card-text"><strong>Pokemon Ability: {{pokemon_ability}}</strong></p>
-                  <form method="POST" action="">
-                    {{ submitform.hidden_tag() }}
+                  <form method="POST" action="{{ url_for('pokemon_selector.pokemon_selector') }}">
                     <input type="hidden" name="pokemon_name" value="{{ pokemon }}">
-                    {{submitform.submit_btn(class="btn btn-primary d-block mx-auto")}}
-                    
+                    <button type="submit" class="btn btn-primary d-block mx-auto">Add to Team</button>
                 </form>
+                
                 
                   </form>
               </div>

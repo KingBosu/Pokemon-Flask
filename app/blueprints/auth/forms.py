@@ -18,10 +18,4 @@ class RegisterForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired()])
     register_btn = SubmitField('Register', validators=[DataRequired()])
 
-class AddToTeamForm(FlaskForm):
-    pokemon_name = StringField('pokemon_name', validators=[DataRequired()])
-    pokemon_ability = StringField('pokemon_ability', validators=[DataRequired()])
-    pokemon_base_exp = StringField('pokemon_base_exp', validators=[DataRequired()])
-    pokemon_sprites = StringField('pokemon_sprites', validators=[DataRequired()])
-    submit_btn = SubmitField('Add to Team')
 

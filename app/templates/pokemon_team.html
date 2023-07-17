@@ -1,24 +1,18 @@
-{%extends 'home.html'%}
+{% extends 'home.html' %}
 
-{%block title%}
+{% block title %}
 <title>Pokemon Team</title>
-{%endblock%}
+{% endblock %}
 
-{%block content%}
-
-<div class = "container">
-<h1>{{current_user.username}}'s Pokemon Team</h1>
-<ul style = "list-style: none;">
-    <li>Pokemon 1</li>
-    <br>
-    <li>Pokemon 2</li>
-    <br>
-    <li>Pokemon 3</li>
-    <br>
-    <li>Pokemon 4</li>
-    <br>
-    <li>Pokemon 5</li>
-</ul>
-
+{% block content %}
+<div class="container">
+    <h1>{{ current_user.username }}'s Pokemon Team</h1>
+    <ul style="list-style: none;">
+        {% for pokemon in current_user.team %}
+            <li>{{ pokemon.name }}</li>
+            <img src="{{pokemon_sprites}}" alt="{{pokemon}} sprite" alt="{{pokemon}} image">
+            <br>
+        {% endfor %}
+    </ul>
 </div>
-{%endblock%}
+{% endblock %}
