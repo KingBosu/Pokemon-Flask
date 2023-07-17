@@ -35,9 +35,9 @@
               <div class="card-block">
                   <h4 class="card-title">{{pokemon_name}}<small>Base EXP-{{pokemon_base_exp}}    Attack- {{pokemon_attack}}    Defense-{{pokemon_defense}}</small></h4>
                   <p class="card-text"><strong>Pokemon Ability: {{pokemon_ability}}</strong></p>
-                  <form method="POST" action="{{ url_for('pokemon_selector.pokemon_selector') }}">
+                  <form method="POST" action="{{ url_for('pokemon_catcher.catch_pokemon') }}">
                     <input type="hidden" name="pokemon_name" value="{{ pokemon }}">
-                    <button type="submit" class="btn btn-primary d-block mx-auto">Add to Team</button>
+                    <button type="submit" class="btn btn-primary d-block mx-auto">Catch Pokemon!</button>
                 </form>
                 
                 

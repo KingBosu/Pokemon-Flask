@@ -24,7 +24,9 @@ def create_app():
     from app.blueprints.pokemon_selector import pokemon_selector
     from app.blueprints.auth import auth
     from app.blueprints.show_pokemon_team import show_pokemon_team
+    from app.blueprints.pokemon_catcher import pokemon_catcher
 
+    app.register_blueprint(pokemon_catcher)
     app.register_blueprint(home)
     app.register_blueprint(pokemon_selector)
     app.register_blueprint(auth)
